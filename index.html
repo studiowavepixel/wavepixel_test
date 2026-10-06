@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WavePixel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+<div class="container nav-inner">
+<div class="logo"><div class="logo-icon">W</div>WavePixel</div>
+<div class="nav-links">
+<a href="#home">Home</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a>
+</div>
+<div class="nav-actions">
+<button class="icon-btn" id="themeToggle">🌙</button>
+<button class="icon-btn" id="cartBtn">🛒<span id="cartCount" class="cart-badge" style="display:none">0</span></button>
+<button class="btn btn-ghost" id="loginBtn">Login</button>
+<button class="btn btn-primary" id="signupBtn">Sign Up</button>
+</div>
+<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-panel">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div style="font-weight:800;font-size:18px;display:flex;gap:8px;align-items:center"><div style="width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#7C3AED,#8B5CF6);display:grid;place-items:center;color:white">W</div>WavePixel</div>
+<button class="icon-btn" id="closeMobile">✕</button>
+</div>
+<div class="mobile-nav-links">
+<a href="#home" onclick="closeMobileMenu()">🏠 Home <span>→</span></a>
+<a href="#pricing" onclick="closeMobileMenu()">💰 Pricing <span>→</span></a>
+<a href="#about" onclick="closeMobileMenu()">👋 About <span>→</span></a>
+<a href="#contact" onclick="closeMobileMenu()">📞 Contact <span>→</span></a>
+</div>
+<div class="mobile-actions">
+<div style="font-size:12px;font-weight:700;color:var(--text-soft)">ACTIONS</div>
+<div class="mobile-row">
+<button class="icon-btn" id="mobileThemeToggle">🌙 Dark Mode</button>
+<button class="icon-btn" id="mobileCartBtn">🛒 Cart <span id="mobileCartCount" class="cart-badge" style="display:none">0</span></button>
+</div>
+<div class="mobile-row">
+<button class="btn btn-ghost" style="flex:1" id="mobileLoginBtn">Login</button>
+<button class="btn btn-primary" style="flex:1" id="mobileSignupBtn">Sign Up</button>
+</div>
+</div>
+</div>
+</div>
+
+<section id="home" class="hero"><div class="container">
+<div class="badge anim">● Sri Lankan's Web Design Company-Wavepixel</div>
+<h1 class="anim" style="margin-top:16px">Premium websites in <span>High Quality</span></h1>
+<p class="anim">Visit us now for 100% accurate, clean, and high-quality website creation.</p>
+<div class="hero-ctas anim">
+<button class="btn btn-primary" onclick="addToCart('Pro Plan',6000)">🚀 GET STARTED</button>
+<button class="btn btn-ghost" id="heroLogin">READ MORE →</button>
+</div></div></section>
+
+<section id="pricing" class="section"><div class="container">
+<h2 class="h2 anim">-pricing-</h2><p class="sub anim">We have three plan for making websites.</p>
+<div class="pricing">
+<div class="price-card anim"><div class="shine"></div><div class="badge">FREE</div><div class="price">Rs 5,000 <span>/once</span></div><ul class="feat-list"><li><i>✓</i>1 Pages</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li></ul><div class="card-actions"><button class="btn btn-ghost">View</button><button class="btn btn-primary" onclick="addToCart('Free',5000)">Add to Cart</button></div></div>
+<div class="featured-wrapper anim"><div class="popular-badge">🔥 MOST POPULAR</div><div class="price-card featured"><div class="shine"></div><div class="badge" style="background:var(--p-600);color:white;margin-top:8px">PRO</div><div class="price">Rs 6,000 <span>/once</span></div><ul class="feat-list"><li><i>✓</i>5 Pages</li><li><i>✓</i>Customized</li><li><i>✓</i>WhatsApp chat</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li></ul><div class="card-actions"><button class="btn btn-ghost">View</button><button class="btn btn-primary" onclick="addToCart('Pro',6000)">Add to Cart</button></div></div></div>
+<div class="price-card anim"><div class="shine"></div><div class="badge">PREMIUM</div><div class="price">Rs 7,000 <span>/once</span></div><ul class="feat-list"><li><i>✓</i>Unlimited</li><li><i>✓</i>Customized</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li><li><i>✓</i>Not customized</li></ul><div class="card-actions"><button class="btn btn-ghost">View</button><button class="btn btn-primary" onclick="addToCart('Premium',7000)">Add to Cart</button></div></div>
+</div></div></section>
+
+<section id="about" class="section" style="background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)"><div class="container about">
+<div class="anim"><div class="badge">About WavePixel</div><h2 style="font-size:38px;font-weight:800;margin:12px 0">WAVEPIXELSTUDIO BY SEHAN DILUMINDA</h2>
+<div class="stat-row"><div class="stat"><b>12</b><span style="font-size:12px">Projects</span></div><div class="stat"><b>1+ Yr</b><span style="font-size:12px">Expiriece</span></div><div class="stat view-counter"><b id="viewCount">0</b><span style="font-size:12px">🔥 Views</span></div></div></div>
+<div class="about-visual anim"><div><div style="font-size:48px">Live Viewing</div><div id="visualCount" style="font-size:38px;margin-top:8px">0</div></div></div>
+</div></section>
+
+<section id="contact" class="section"><div class="container">
+<h2 class="h2 anim">Contact Us</h2><p class="sub anim">• Wavepixelstudio Online 24/7</p>
+<div class="contact-grid anim">
+<div class="contact-info-cards">
+<div class="contact-card"><div class="contact-icon">📍</div><div><b>Location</b><div style="font-size:13px;color:var(--text-soft)">Elpitiya , Galle , Sri Lanka</div></div></div>
+<div class="contact-card"><div class="contact-icon">📧</div><div><b>Email</b><div style="font-size:13px;color:var(--text-soft)">studiowavepixel@gmail.com</div></div></div>
+<div class="contact-card"><div class="contact-icon">📞</div><div><b>Call / WhatsApp</b><div style="font-size:13px;color:var(--text-soft)">+94 77 025 4759</div></div></div>
+<div class="contact-card"><div class="contact-icon">⏰</div><div><b>Hours</b><div style="font-size:13px;color:var(--text-soft)">Monday-Friday: 8.00AM-6.00PM</div></div></div>
+<button class="btn btn-primary" style="width:100%;padding:16px" onclick="openWhatsapp()">💬 Chat Now</button>
+</div>
+<div class="contact-form">
+<input class="input" placeholder="First Name"><input class="input" style="margin-top:12px" placeholder="Email"><textarea class="input" style="margin-top:12px" rows="4" placeholder="Message"></textarea>
+<button class="btn btn-primary" style="width:100%;margin-top:12px;padding:16px" onclick="openWhatsapp()">🚀 Send via WhatsApp</button>
+</div>
+</div></div></section>
+
+<footer class="footer"><div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><div style="font-weight:800;font-size:22px;color:white;display:flex;gap:10px;align-items:center"><div style="width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#7C3AED,#8B5CF6);display:grid;place-items:center">W</div>WavePixel</div><p>Premium websites in High Quality
+Visit us now for 100% accurate, clean, and high-quality website creation.</p></div>
+<div class="footer-col"><b>QUICK LINKS</b><ul><li>→ Home</li><li>→ Pricing</li><li>→ About</li><li>→ Contact</li></ul></div>
+<div class="footer-col"><b>PLANS</b><ul><li>✦ Free</li><li>🔥 Pro </li><li>✨ Premium<li></ul></div>
+<div class="footer-col"><b>CONTACT</b><div class="footer-contact-card"><div style="display:grid;gap:12px;font-size:13px"><div>📧 studiowavepixel@gmail.com</div><div>📞 0770254759</div><div>📍 Elpitiya, Galle</div></div></div></div>
+</div>
+<div class="footer-bottom"><span>© 2026 WavePixel • Views: <span id="footerCount">0</span></span><span style="color:#A78BFA">❤️ Made in Sehan Diluminda</span></div>
+</div></footer>
+
+<div class="cart-drawer" id="cartDrawer"><div class="cart-overlay" id="cartOverlay"></div><div class="cart-panel"><div style="display:flex;justify-content:space-between;align-items:center"><h3>Cart</h3><button id="closeCart" class="icon-btn">✕</button></div><div id="cartItems" style="flex:1;overflow:auto;margin-top:16px"></div></div></div>
+<div class="modal" id="loginModal" onclick="if(event.target===this)closeModal('loginModal')"><div class="modal-card"><h3>Login</h3><div style="margin-top:16px;display:grid;gap:12px"><input class="input" placeholder="Email"><input class="input" type="password" placeholder="Password"><button class="btn btn-primary" style="width:100%">Login</button><button class="btn btn-ghost" style="width:100%" onclick="closeModal('loginModal')">Cancel</button></div></div></div>
+<div class="modal" id="signupModal" onclick="if(event.target===this)closeModal('signupModal')"><div class="modal-card"><h3>Sign Up</h3><div style="margin-top:16px;display:grid;gap:12px"><input class="input" placeholder="Name"><input class="input" placeholder="Email"><input class="input" type="password" placeholder="Password"><button class="btn btn-primary" style="width:100%">Sign Up</button><button class="btn btn-ghost" style="width:100%" onclick="closeModal('signupModal')">Cancel</button></div></div></div>
+
+<button class="whatsapp-fixed" id="whatsappBtn"><svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M19.05 4.94A9.9 9.9 0 0 0 12 0C5.46 0 .12 5.34.12 11.88c0 2.09.55 4.14 1.6 5.94L0 24l6.34-1.66a11.9 11.9 0 0 0 5.66 1.44h.01c6.54 0 11.88-5.34 11.88-11.88a11.8 11.8 0 0 0-3.5-8.36Zm-7.05 15.9h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.22-3.76.99-3.66-.24-.38A8.9 8.9 0 0 1 12 3.72a8.9 8.9 0 0 1 8.9 8.9c0 4.9-3.99 8.9-8.9 8.9ZM17.4 14.4c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.59 4.11 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg></button>
+
+<div class="whatsapp-iframe-wrap" id="waIframeWrap">
+<div class="wa-header">
+<div style="display:flex;gap:10px;align-items:center"><div style="width:42px;height:42px;border-radius:50%;background:white;color:#25D366;display:grid;place-items:center;font-weight:800">W</div><div><b style="font-size:15px">WavePixel Support</b><div style="font-size:11px;opacity:0.9">● Online now</div></div></div>
+<button id="waCloseBtn" style="width:32px;height:32px;border-radius:50%;border:none;background:rgba(0,0,0,0.15);color:white;cursor:pointer">✕</button>
+</div>
+<div class="wa-body">
+<div class="wa-profile-card"><div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#A78BFA);display:grid;place-items:center;color:white;font-weight:800;font-size:20px">W</div><div style="flex:1"><b style="font-size:14px;color:#111">WavePixel Studio</b><div class="wa-detail-row">📧 studiowavepixel@gmail.com</div><div class="wa-detail-row">📞 0770254759</div><div class="wa-detail-row">📍 Elpitiya, Galle</div></div></div>
+<div style="padding:0 14px 14px;display:grid;gap:10px"><div class="wa-chat-bubble">Hi! 👋 Welcome to WavePixel!<br><br>Premium websites in High Quality Visit us now<br><br>How can we help? 💜<div style="font-size:10px;color:#667781;margin-top:8px;text-align:right">10:42 AM ✓✓</div></div></div>
+<div style="padding:14px;background:white;border-top:1px solid #E9EDEF"><button class="btn btn-primary" style="width:100%;padding:14px" onclick="window.open('https://wa.me/94770254759','_blank')">💬 Continue to WhatsApp</button></div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
